@@ -242,28 +242,4 @@ class MarkdownExtraCustom extends \Michelf\MarkdownExtra {
 		$text = preg_replace('/\[latex\](([\s\n]*.[\s\n]*)+?)\[\/latex\]/s', '$\1$', $text);
     return $text;
   }
-
-  protected function _doImages_inline_callback($matches) {
-		$alt_text		= $matches[2];
-		$url			= $matches[3] === '' ? $matches[4] : $matches[3];
-		$title			=& $matches[7];
-		$attr  = $this->doExtraAttributes("img", $dummy =& $matches[8]);
-
-		$alt_text = $this->encodeAttribute($alt_text);
-		$url = $this->encodeURLAttribute($url);
-
-    // make a link to the picture and add lightboxing options
-		if(isset($title)) {
-			$title = $this->encodeAttribute($title);
-		}
-    else
-    {
-			$title = "";
-    }
-
-    $result = "<a href=\"$url\" rel=\"lightbox\" class=\"lightbox\" data-rel=\"iLightbox\" data-title=\"$title\" data-caption=\"$alt_text\">" .
-              "<img src=\"$url\" alt=\"$alt_text\" title=\"$title\" $attr$this->empty_element_suffix</a>";
-
-		return $this->hashPart($result);
-	}
 }
