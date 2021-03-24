@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Scholar\n"
+"POT-Creation-Date: 2021-03-14 14:19+0100\n"
+"PO-Revision-Date: 2021-03-14 14:22+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"Last-Translator: Aurélien PIERRE <contact@aurelienpierre.com>\n"
+"Language: fr\n"
+"X-Poedit-SearchPath-0: wp-scholar.php\n"
+"X-Poedit-SearchPath-1: classes\n"
+
+#: classes/TableOfContents.php:87
+#, fuzzy
+msgid "Click to copy this section URL"
+msgstr "Cliquer pour copier ce lien de section"
+
+#: classes/TableOfContents.php:92
+#, fuzzy
+msgid "Click to go back to the table of contents"
+msgstr "Cliquer pour retourner à la table des matières"
+
+#: classes/TableOfContents.php:117
+#, fuzzy
+msgid "Jump to this section"
+msgstr "Sauter à cette section"
+
+#: classes/TableOfContents.php:154 classes/TableOfContents.php:178
+msgid "Table of Contents"
+msgstr "Table des matières"
+
+#: classes/TableOfContents.php:171
+msgid ""
+"There is no table of contents cached in database for this post. This is a "
+"bug."
+msgstr ""
+"Il n'y a pas de table des matières mise en cache dans la base de données "
+"pour cet article. Ceci est un bug."
+
+#: classes/widget.php:9
+msgid "WP Scholar Table of Contents"
+msgstr "Table des matières WP Scholar"
+
+#: classes/widget.php:10
+msgid "Display the post, page and custom post, TOC in sidebar."
+msgstr ""
+"Affiche la table des matières des articles, pages et posts personnalisés "
+"dans la barre latérale."
+
+#: classes/widget.php:44
+msgid "New title"
+msgstr "Nouveau titre"
+
+#: classes/widget.php:61
+msgid "Title:"
+msgstr "Titre :"
+
+#: classes/widget.php:63
+msgid "Depth of titles list:"
+msgstr "Profondeur de la liste de titres :"
+
+#: wp-scholar.php:74
+#, fuzzy
+msgid "The section URL has been copied to your clipboard !"
+msgstr "Le lien de section a été copié dans votre presse-papier !"
+
+#: wp-scholar.php:75
+#, fuzzy
+msgid "The section URL could not be copied to your clipboard."
+msgstr "Ce lien de section n'a pas pu être copié dans votre presse-papier."
