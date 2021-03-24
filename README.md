@@ -1,4 +1,4 @@
-# WP Scholar
+# Writer Pro Scholar
 
 If you are a scientific or technical writer, you might feel WordPress and its Gutenberg editor are going backwards, in a Microsoft Office direction : giving an overwhelming set of formatting options while making actual **typing** really hard. Typing is creating on keyboard, and any side mouse-job is a loss of time and a risk of [Repetitive Strain Injury](https://en.wikipedia.org/wiki/Repetitive_strain_injury).
 
@@ -17,5 +17,5 @@ WordPress is turning into a better place for marketers, but is becoming a nightm
   * adds support for $\LaTeX$ equations in posts, comments and pages, with environments, references and numbered equations,
   * adds syntax highlighting on code blocks declared with a programming language (245 languages supported),
   * imports Jupyter notebooks with/or Plotly and Bokeh interactive graphs.
-  
+
 [Documentation / presentation](https://eng.aurelienpierre.com/wp-scholar)

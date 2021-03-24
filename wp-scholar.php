@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       WP Scholar
+ * Plugin Name:       Writer Pro Scholar
  * Plugin URI:        https://eng.aurelienpierre.com/wp-scholar
  * Description:       Efficient Markdown typing with maths, footnotes and charts support for technical writers.
  * Version:           0.1
