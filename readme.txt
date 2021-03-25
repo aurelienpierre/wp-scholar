@@ -1,10 +1,20 @@
-# Writer Pro Scholar
-
-[![GitHub Release Date](https://img.shields.io/github/release-date/aurelienpierre/wp-scholar)](https://github.com/aurelienpierre/wp-scholar/releases/tag/latest)
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/aurelienpierre/wp-scholar)](https://github.com/aurelienpierre/wp-scholar)
-[![Donate](https://img.shields.io/liberapay/goal/aurelienpierre.svg?logo=liberapay")](https://liberapay.com/aurelienpierre/donate)
-[![Downloads](https://img.shields.io/github/downloads/aurelienpierre/wp-scholar/total)](https://github.com/aurelienpierre/wp-scholar/releases/tag/latest)
-[![Fork](https://img.shields.io/github/forks/aurelienpierre/wp-scholar?style=social)](https://github.com/aurelienpierre/wp-scholar/fork)
+=== Writer Pro Scholar ===
+Plugin Name:       Writer Pro Scholar
+Plugin URI:        https://eng.aurelienpierre.com/wp-scholar
+Contributors:      aurelienpierre
+Donate link:       https://liberapay.com/aurelienpierre/donate
+Tags:              markdown, latex, table of content, footnotes, plotly, bokeh, jupyter notebook, prism, mermaid, code highlighting, charts, plots
+Description:       Efficient Markdown typing with maths, footnotes and charts support for technical writers.
+Version:           0.1
+Requires at least: 5.2
+Requires PHP:      7.2
+Author:            Aurélien PIERRE
+Author URI:        https://aurelienpierre.com
+License:           GPL-3.0
+License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
+Stable tag :       0.1
+Text Domain:       wp-scholar
+Domain Path:       /languages
 
 WP Scholar provides a clutter-free, direct and fast typing experience for the heavy-duty writers who type a lot every day : technical writers, engineers, analysts, journalists, researchers, scientists, etc.
 It supports equations, footnotes, table of contents, code highlighting, charts drawing, interactive plots and Jupyter notebooks includes, through a direct access to the Markdown and LaTeX code.
@@ -17,9 +27,9 @@ The truth is, WordPress is turning into a better place for marketers, but is bec
 While most technical writers have now turned toward static content generators (Hugo, Jekyll, etc.), and researchers keep writing fixed-width PDF papers (2021 much…),
 WP Scholar tries to make WordPress great again for you, writer.
 
-## Description
+== Description ==
 
-### Features ###
+= Features =
 
 1. **Newbie features** :
   * adds support for extended [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/) formatting in posts, pages and comments,
@@ -37,7 +47,7 @@ WP Scholar tries to make WordPress great again for you, writer.
   * adds [syntax highlighting](https://prismjs.com/) on code blocks declared with a programming language (245 languages supported),
   * imports [Jupyter notebooks](https://jupyter.org/) and include them in pages (you can even write full posts with graphs and code in Jupyter then include them).
 
-### Compatibility ###
+= Compatibility =
 
 1. Supports [Typora](https://typora.io/) Markdown editor output and 90 % of its features, so you can type your posts off-line in Typora editor, and copy-paste the Markdown code,
 1. Supports TinyMCE (classic WordPress editor) and Gutenberg in their code editor versions, plus Gutenberg HTML block. The visual editors are not fully supported ([see why](https://eng.aurelienpierre.com/wp-scholar/#Dynamic-workflow)),
@@ -46,7 +56,7 @@ WP Scholar tries to make WordPress great again for you, writer.
 1. Supports all shortcodes from WordPress and other plugins,
 1. Saves posts as true Markdown code, so they can be edited again as Markdown (most editors convert Markdown to HTML in browser and save HTML).
 
-### Performance ###
+= Performance =
 
 1. WP Scholar only loads a minified 1.6 kB CSS file on every page.
 1. The ressources to load (CSS and JS) are detected on a page-wise basis, so only the necessary ones are loaded and your home page doesn't get bloated with useless ressources.
@@ -55,7 +65,7 @@ WP Scholar tries to make WordPress great again for you, writer.
 1. Most scripts are loaded in footer and can be loaded asynchronously for better loading time.
 1. Since WP Scholar parse Markdown at page-rendering time, this can prove heavy and slow. A [caching plugin](https://wordpress.org/plugins/search/page+cache/) is strongly recommended.
 
-### Demos ###
+= Demos =
 
 The following demos are real-life posts for which this plugin was initially created :
 
@@ -64,10 +74,11 @@ The following demos are real-life posts for which this plugin was initially crea
 * [A post written as a Jupyter notebook with Plotly interactive graphs, exported to HTML, and included in a WordPress post with the shortcode](https://eng.aurelienpierre.com/2018/05/analyse-the-heat-losses-and-design-the-heating-of-a-sprinter-van/)
 * [A post written before WP Scholar in the classic TinyMCE visual editor with no Markdown but with maths, rendered through WP Scholar](https://eng.aurelienpierre.com/2019/01/derivating-hdr-ipt-direct-and-inverse-transformations/)
 
-## Usage ##
+= Usage =
 
 The whole thing is designed to be as lightweight and simple as possible.
 There is no configuration page, just enable and start writing Markdown or LaTeX.
 Everything is detected automatically, and options are defined in the text editor through HTML comments tags.
+
 
 [Documentation](https://eng.aurelienpierre.com/wp-scholar/)

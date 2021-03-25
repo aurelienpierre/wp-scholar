@@ -8,8 +8,9 @@
  * Requires PHP:      7.2
  * Author:            Aurélien PIERRE
  * Author URI:        https://aurelienpierre.com
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
+ * Stable tag :       0.1
  * Text Domain:       wp-scholar
  * Domain Path:       /languages
  */
