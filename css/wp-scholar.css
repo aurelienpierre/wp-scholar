@@ -45,7 +45,7 @@ p:empty {
 }
 a.anchor-link {
   position: relative;
-  left: -1em;
+  left: -0.8em;
   width: 0;
   display: none;
 }
