@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Writer Pro Scholar
+ * Plugin Name:       WP Scholar
  * Plugin URI:        https://eng.aurelienpierre.com/wp-scholar
  * Description:       Efficient Markdown typing with maths, footnotes and charts support for technical writers.
  * Version:           0.1
@@ -8,9 +8,8 @@
  * Requires PHP:      7.2
  * Author:            Aurélien PIERRE
  * Author URI:        https://aurelienpierre.com
- * License:           GPL-3.0
- * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
- * Stable tag :       0.1
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp-scholar
  * Domain Path:       /languages
  */
@@ -296,6 +295,7 @@ function typographer($content)
   $typographer->do_comma_quotes = 1;
   $typographer->do_space_colon = 2;
   $typographer->do_space_semicolon = 2;
+  $typographer->do_space_marks = 2;
   $typographer->do_space_frenchquote = 2;
   $typographer->do_space_emdash = 1;
   $typographer->do_space_endash = 1;
@@ -309,7 +309,7 @@ function typographer($content)
   $typographer->space_frenchquote = "&#8239;";
   $typographer->space_thousand = "&#8239;";
   $typographer->space_unit = "&#8239;";
-  $typographer->space = '(?: | | | |&#8200;|&#8194;|&#8201;|&thinsp;|&#8239;|&nbsp;|&#160;|&#0*160;|&#x0*[aA]0;)';
+  $typographer->space = '(?: | | |&#8200;|&#8194;|&#8201;|&thinsp;|&#8239;|&nbsp;|&#160;|&#0*160;|&#x0*[aA]0;)';
 
   $locale = get_locale();
 
