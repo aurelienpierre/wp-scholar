@@ -68,9 +68,9 @@ add_action("wp_enqueue_scripts", "register_scripts");
 function register_scripts()
 {
   // main style and script
-  wp_register_style( 'wp-scholar', plugins_url( 'wp-scholar/css/wp-scholar.min.css' ), array(), '0.1');
-  wp_register_script( 'wp-scholar', plugins_url( 'wp-scholar/js/wp-scholar.min.js' ), array(), '0.1', true);
-  wp_register_style( 'prism-style', plugins_url( 'wp-scholar/css/code.min.css' ), array(), '1.23.0');
+  wp_register_style( 'wp-scholar', plugin_dir_url( __FILE__ ).'css/wp-scholar.min.css', array(), '0.1');
+  wp_register_script( 'wp-scholar', plugin_dir_url( __FILE__ ).'js/wp-scholar.min.js', array(), '0.1', true);
+  wp_register_style( 'prism-style', plugin_dir_url( __FILE__ ).'css/code.min.css', array(), '1.23.0');
 
   // Localize the script with new data
   $translation_array = array(
@@ -80,7 +80,7 @@ function register_scripts()
   wp_localize_script( 'wp-scholar', 'wp_scholar_translation', $translation_array );
 
   // Jupyter Notebook styling
-  wp_register_style( 'jupyter', plugins_url( 'wp-scholar/css/jupyter.min.css' ), array(), '1.2');
+  wp_register_style( 'jupyter', plugin_dir_url( __FILE__ ).'css/jupyter.min.css', array(), '1.2');
 
   // Plotly graphs
   wp_register_script('plotly', "//cdnjs.cloudflare.com/ajax/libs/plotly.js/1.58.4/plotly-basic.min.js", array(), '1.58.4', false);
