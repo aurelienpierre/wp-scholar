@@ -3,7 +3,7 @@
  * Plugin Name:       WP Scholar
  * Plugin URI:        https://eng.aurelienpierre.com/wp-scholar
  * Description:       Efficient Markdown typing with maths, footnotes and charts support for technical writers.
- * Version:           0.1
+ * Version:           0.2
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Aurélien PIERRE
@@ -68,9 +68,9 @@ add_action("wp_enqueue_scripts", "register_scripts");
 function register_scripts()
 {
   // main style and script
-  wp_register_style( 'wp-scholar', plugin_dir_url( __FILE__ ).'css/wp-scholar.min.css', array(), '0.1');
-  wp_register_script( 'wp-scholar', plugin_dir_url( __FILE__ ).'js/wp-scholar.min.js', array(), '0.1', true);
-  wp_register_style( 'prism-style', plugin_dir_url( __FILE__ ).'css/code.min.css', array(), '1.23.0');
+  wp_register_style( 'wp-scholar', plugins_url( 'wp-scholar/css/wp-scholar.min.css' ), array(), '0.1');
+  wp_register_script( 'wp-scholar', plugins_url( 'wp-scholar/js/wp-scholar.min.js' ), array(), '0.1', true);
+  wp_register_style( 'prism-style', plugins_url( 'wp-scholar/css/code.min.css' ), array(), '1.23.0');
 
   // Localize the script with new data
   $translation_array = array(
@@ -80,10 +80,10 @@ function register_scripts()
   wp_localize_script( 'wp-scholar', 'wp_scholar_translation', $translation_array );
 
   // Jupyter Notebook styling
-  wp_register_style( 'jupyter', plugin_dir_url( __FILE__ ).'css/jupyter.min.css', array(), '1.2');
+  wp_register_style( 'jupyter', plugins_url( 'wp-scholar/css/jupyter.min.css' ), array(), '1.2');
 
   // Plotly graphs
-  wp_register_script('plotly', "//cdnjs.cloudflare.com/ajax/libs/plotly.js/1.58.4/plotly-basic.min.js", array(), '1.58.4', false);
+  wp_register_script('plotly', "//cdnjs.cloudflare.com/ajax/libs/plotly.js/2.14.0/plotly.min.js", array(), '2.14.0', false);
 
   // Bokeh graphs
   wp_register_script('bokeh', "//cdnjs.cloudflare.com/ajax/libs/bokeh/2.3.0/bokeh.min.js", array(), '2.3.0', false);
@@ -93,12 +93,12 @@ function register_scripts()
   //wp_register_script('mathjax', "//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js", array(), '2.7.7', false);
 
   // Prism syntax highlighting
-  wp_register_script('prism-core', "//cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-core.min.js", array(), "1.23.0", true);
-  wp_register_script('prism-autoloader', "//cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js", array('prism-core'), "1.23.0", true);
-  wp_register_script('prism-line-numbers', "//cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js", array('prism-autoloader'), "1.23.0", true);
+  wp_register_script('prism-core', "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js", array(), "1.29.0", true);
+  wp_register_script('prism-autoloader', "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js", array('prism-core'), "1.29.0", true);
+  wp_register_script('prism-line-numbers', "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js", array('prism-autoloader'), "1.29.0", true);
 
   // Marmaid charts
-  wp_register_script('mermaid', "//cdnjs.cloudflare.com/ajax/libs/mermaid/8.9.1/mermaid.min.js", array(), '8.9.1', true);
+  wp_register_script('mermaid', "//cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.6/mermaid.min.js", array(), '9.1.6', true);
 }
 
 function resize_ui()
@@ -143,7 +143,7 @@ function configure_mathjax()
       })
     });
   </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"></script>
   DATA;
 */
   // Code for Mathjax 3.1 and later
@@ -160,7 +160,7 @@ function configure_mathjax()
           processRefs: true,
         },
         svg: {
-          scale: 1,
+          scale: 1.25,
           minScale: .5,
           mtextInheritFont: true,
           merrorInheritFont: true,
@@ -180,7 +180,7 @@ function configure_mathjax()
         }
     };
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
   DATA;
 }
 
@@ -189,7 +189,7 @@ function configure_prism()
   echo <<<'DATA'
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      Prism.plugins.autoloader.languages_path = '//cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/';
+      Prism.plugins.autoloader.languages_path = '//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
     }, false);
   </script>
   DATA;
@@ -201,10 +201,14 @@ function configure_mermaid()
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var config = {
-      startOnLoad: true,
-      theme: 'neutral',
-      htmlLabels: true,
-      themeCSS: ':root { --mermaid-font-family: sans-serif; }',
+        startOnLoad: true,
+        theme: 'neutral',
+        htmlLabels: true,
+        themeCSS: ':root { --mermaid-font-family: sans-serif; --mermaid-font-size: 14px;}',
+        'themeVariables': {
+          fontFamily: 'sans-serif',
+          fontSize: '14px'
+        },
       };
       mermaid.initialize(config);
     }, false);
